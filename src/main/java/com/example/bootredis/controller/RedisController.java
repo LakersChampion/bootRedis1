@@ -19,6 +19,7 @@ public class RedisController {
     @ResponseBody
     @RequestMapping("/redisTest")
     public String hjkl() {
+        System.out.println("change version v1.02");
         redisTemplate.opsForValue().set("name", "lbh");
         String name = (String) redisTemplate.opsForValue().get("name");
         return name;
@@ -31,7 +32,6 @@ public class RedisController {
         if (ifAbsent) {
             //获取到了锁,执行+1操作
             redisTemplate.opsForValue().increment("num");
-
             String lock = (String) redisTemplate.opsForValue().get("lock");
             if (lock.equals(string)) {
                 //释放自己的锁
