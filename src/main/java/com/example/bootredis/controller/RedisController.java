@@ -21,7 +21,7 @@ public class RedisController {
     public String hjkl() {
         System.out.println("change version v1.02");
         System.out.println("正常合并分支");
-        System.out.println("hot fix test");
+        System.out.println("hot fix testchange");
         redisTemplate.opsForValue().set("name", "lbh");
         String name = (String) redisTemplate.opsForValue().get("name");
         return name;
