@@ -20,6 +20,7 @@ public class RedisController {
     @RequestMapping("/redisTest")
     public String hjkl() {
         System.out.println("change version v1.02");
+        System.out.println("正常合并分支");
         redisTemplate.opsForValue().set("name", "lbh");
         String name = (String) redisTemplate.opsForValue().get("name");
         return name;
